@@ -24,6 +24,7 @@ CFLAGS= \
        -isystem ./build/wayland_protos \
        -Wall -Werror -Wextra -Wpedantic \
        -Wno-unused-parameter \
+       -Wno-strict-prototypes \
        -Wundef \
        -Wmissing-include-dirs \
        -Wpointer-arith \
