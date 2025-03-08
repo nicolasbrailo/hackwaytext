@@ -1,12 +1,12 @@
 .PHONY: clean deploytgt
 
-all: hackwaytext
+all: hackswaytext
 
 clean:
-	rm -rf build hackimg
+	rm -rf build hackswaytext
 
-deploytgt: hackwaytext
-	scp ./hackwaytext batman@10.0.0.146:/home/batman/hackwaytext
+deploytgt: hackswaytext
+	scp ./hackswaytext batman@10.0.0.146:/home/batman/hackswaytext
 
 SYSROOT=/home/batman/src/xcomp-rpiz-env/mnt/
 XCOMPILE=\
@@ -71,7 +71,7 @@ build/wayland_protos/%.o build/wayland_protos/%.c build/wayland_protos/%.h: wayl
 	wayland-scanner client-header $< $(patsubst %.o, %.h, $@)
 	clang $(CFLAGS) $(patsubst %.o, %.c, $@) -c -o $@
 
-hackwaytext:\
+hackswaytext:\
 		build/wayland_protos/xdg-shell.o \
 		build/wayland_protos/wlr-layer-shell-unstable-v1.o \
 		build/wayland_protos/xdg-output-unstable-v1.o \
