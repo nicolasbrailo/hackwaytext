@@ -19,30 +19,32 @@ XCOMPILE=\
 #XCOMPILE=
 
 CFLAGS= \
-       $(XCOMPILE) \
-       -I./src/ \
-       -isystem ./build/wayland_protos \
-       -Wall -Werror -Wextra -Wpedantic \
-       -Wno-unused-parameter \
-       -Wno-strict-prototypes \
-       -Wundef \
-       -Wmissing-include-dirs \
-       -Wpointer-arith \
-       -Winit-self \
-       -Wfloat-equal \
-       -Wredundant-decls \
-       -Wimplicit-fallthrough \
-       -Wendif-labels \
-       -Wstrict-aliasing=2 \
-       -Woverflow \
-       -Wformat=2 \
-       -Winvalid-pch \
-       -ggdb -O0 \
-       -std=c99 \
-       -fdiagnostics-color=always \
-       -D_FILE_OFFSET_BITS=64 \
-       -D_POSIX_C_SOURCE=200809 \
-       -pthread \
+	$(XCOMPILE) \
+	-I./src/ \
+	-isystem ./build/wayland_protos \
+	-fdiagnostics-color=always \
+	-ffunction-sections -fdata-sections \
+	-ggdb -O3 \
+	-std=gnu99 \
+	-Wall -Werror -Wextra -Wpedantic \
+	-Wendif-labels \
+	-Wfloat-equal \
+	-Wformat=2 \
+	-Wimplicit-fallthrough \
+	-Winit-self \
+	-Winvalid-pch \
+	-Wmissing-field-initializers \
+	-Wmissing-include-dirs \
+	-Wno-strict-prototypes \
+	-Wno-unused-function \
+	-Wno-unused-parameter \
+	-Woverflow \
+	-Wpointer-arith \
+	-Wredundant-decls \
+	-Wstrict-aliasing=2 \
+	-Wundef \
+	-Wuninitialized \
+	-pthread \
 
 LDFLAGS=\
 	  -lwayland-client \
